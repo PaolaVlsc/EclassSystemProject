@@ -21,7 +21,7 @@ Student::Student(const string &code, const char *lastName, const char *firstName
 
 // copy constructor
 Student::Student(const Student &copy) : Person(copy) {
-    this->semester = semester;
+    this->semester = copy.semester;
 }
 
 // destructor

@@ -29,7 +29,7 @@ public:
 
     void setSemester(unsigned int semester);
 
-    // virtual print()
+    // FIXME 01: virtual print()
 
 };
 
