@@ -3,6 +3,7 @@
 #include "Person.h"
 #include "Student.h"
 #include "Professor.h"
+#include "User.h"
 #include<list>
 
 using namespace std;
@@ -21,11 +22,15 @@ int main() {
 //    Person person01("cs161020", "Velasco", "Paola", "cs161020@uniwa.gr", coursesList);
 //    cout << person01.getFirstName();
 
-//    Student student01("cs161020", "Velasco", "Paola", 12, "cs161020@uniwa.gr", coursesList);
-//    cout << student01.getFirstName();
+    Student student01("cs161020", "Velasco", "Paola", 12, "cs161020@uniwa.gr", coursesList);
+    cout << student01.getFirstName();
 
 //    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
 //    cout << professor01.getSpeciality();
+
+    User user01("Log01", "1234", &student01);
+    cout << user01.getPerson()->getCode();
+
 
     return 0;
 }
