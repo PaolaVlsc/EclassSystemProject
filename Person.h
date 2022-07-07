@@ -58,6 +58,8 @@ public:
     // Να υπερφορτωθεί ο τελεστής = (assignment operator)ώστε να πραγματοποιείται σωστά η λειτουργία ανάθεσης.
     //template <typename T> T& operator=(const T &) ;
 
+    // Έλεγχος αν έχει αυτό το μάθημα
+    bool hasCourse(Course &);
 };
 
 
