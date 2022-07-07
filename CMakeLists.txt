@@ -3,4 +3,4 @@ project(EclassSystemProject)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(EclassSystemProject main.cpp Course.cpp Course.h Person.cpp Person.h)
+add_executable(EclassSystemProject main.cpp Course.cpp Course.h Person.cpp Person.h Student.cpp Student.h)
