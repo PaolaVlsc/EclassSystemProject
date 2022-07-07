@@ -14,13 +14,50 @@ using std::string;
 
 class Person {
 private:
+
     string code;
     char *lastName;
     char *firstName;
     string email;
     list<Course *> coursesList;
 public:
-    Person(const string &code, char *lastName, char *firstName, const string &email, const list<Course *> &coursesList);
+    // constructor
+    Person(const string &, const char *, const char *, const string &, const list<Course *> &);
+
+    // copy constructor
+    Person(const Person &);
+
+    // destructor
+    virtual ~Person();
+
+    // setters
+    void setCode(const string &code);
+
+    void setLastName(const char *lastName);
+
+    void setFirstName(const char *firstName);
+
+    void setEmail(const string &email);
+
+    void setCoursesList(const list<Course *> &coursesList);
+
+    // getters
+    const string &getCode() const;
+
+    char *getLastName() const;
+
+    char *getFirstName() const;
+
+    const string &getEmail() const;
+
+    const list<Course *> &getCoursesList() const;
+
+    // pure virtual
+    //virtual void print(ostream &) const = 0;
+
+    // Να υπερφορτωθεί ο τελεστής = (assignment operator)ώστε να πραγματοποιείται σωστά η λειτουργία ανάθεσης.
+    //template <typename T> T& operator=(const T &) ;
+
 };
 
 

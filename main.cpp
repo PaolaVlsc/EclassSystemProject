@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Course.h"
+#include "Person.h"
 #include<list>
 
 using namespace std;
@@ -15,6 +16,8 @@ int main() {
     coursesList.push_back(new Course("ICE04", "C#", 10));
     coursesList.push_back(new Course("ICE05", "Maths", 1));
 
+    Person person01("cs161020", "Velasco", "Paola", "cs161020@uniwa.gr", coursesList);
+    cout << person01.getFirstName();
 
     return 0;
 }
