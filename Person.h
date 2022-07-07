@@ -52,7 +52,7 @@ public:
 
     const list<Course *> &getCoursesList() const;
 
-    // pure virtual
+    // FIXME 01: pure virtual
     //virtual void print(ostream &) const = 0;
 
     // Να υπερφορτωθεί ο τελεστής = (assignment operator)ώστε να πραγματοποιείται σωστά η λειτουργία ανάθεσης.
