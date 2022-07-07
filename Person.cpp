@@ -120,6 +120,17 @@ const string &Person::getEmail() const {
 const list<Course *> &Person::getCoursesList() const {
     return coursesList;
 }
+#include <algorithm>
+
+bool Person::hasCourse(Course &course) {
+//    list <Course *>::iterator it;
+//    for (it = coursesList.begin (); it != coursesList.end (); it++)
+//        if (*it == &course)
+//            return true;
+//    return false;
+
+    return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
+}
 
 //template<typename T>
 //T &Person::operator=(const T &) {

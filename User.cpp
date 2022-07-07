@@ -8,7 +8,9 @@ User::User(const string &username, const string &password, Person *person) : use
                                                                              person(person) {}
 
 User::User(const User &copy) {
-
+    this->password = copy.password;
+    this->username = copy.username;
+    this->person = copy.person;
 }
 
 User::~User() {
