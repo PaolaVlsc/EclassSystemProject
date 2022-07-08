@@ -6,7 +6,7 @@
 #include "User.h"
 #include "EClass.h"
 #include<list>
-
+#include <fstream>
 using namespace std;
 
 // φοιτητές που παρακολουθούν ένα τουλάχιστον μάθημα
@@ -15,9 +15,13 @@ list<Student *> activeStudents();
 // Υπερφορτώστε τον τελεστή << : να τυπώνει τα στοιχεία των φοιτητών που παρακολουθούν μαθήματα στο τμήμα.
 ostream &operator<<(ostream &stream, const EClass &);
 
+// Να υλοποιηθεί μέθοδος η οποία θα φορτώνει από αρχείο κειμένου τα ονόματα χρήστη και τα συνθηματικά των μελών του τμήματος.
+// Το αρχείο περιέχει τα στοιχεία όλων των μελών του ιδρύματος.
+// Κάθε γραμμή περιέχει τα στοιχεία ενός μέλους  και έχει την εξής γραμμογράφηση:
+void readFromFileUsers(const string &);
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
-
 
     list<Course *> coursesList;
     coursesList.push_back(new Course("ICE01", "C++", 2));
@@ -38,8 +42,48 @@ int main() {
     User user01("Log01", "1234", &student01);
     cout << user01.getPerson()->getCode();
 
+    string fileName = "users.txt";
+    readFromFileUsers(fileName);
 
     return 0;
+}
+
+
+
+void readFromFileUsers(const string &fileName)
+{
+    // Δημιουργία stream
+    ifstream fileInput;
+
+    // Άνοιγμα αρχείου
+    fileInput.open(fileName.c_str());
+
+    // Έλεγχος ενέργειας
+    if (fileInput.is_open() == false) {
+        cout << "Σφάλμα κατά το άνοιγμα αρχείου για διάβασμα μαθήματα σχολής \n";
+        throw -1;
+    }
+
+    int code;
+    char username[20];
+    char password[100];
+    string line;
+
+    cout << endl << "Users from file" << endl;
+    // read line
+    while (1) {
+        // diavasma grammhs
+        getline(fileInput, line);
+        // cout << line << endl;
+        if (!fileInput)
+            break; // An exei ftasei sto telos tou arxeiou OR egine kapoio sfalma
+
+        sscanf(line.c_str(), "%d,%[^,],%s\n", &code, username ,password);
+        cout << code << " " << username << " " << password << endl;
+
+    }
+
+    fileInput.close();
 }
 
 list<Student *> activeStudents(const EClass &eclass) {
@@ -82,3 +126,4 @@ EClass operator++(EClass &eclass) {
 
     return temp;
 }
+
