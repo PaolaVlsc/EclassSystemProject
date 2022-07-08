@@ -143,6 +143,7 @@ void Person::addCourse(Course &course) {
     this->setCoursesList(temp);
 }
 
+
 ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {
     for (Course *each: coursesList) {
         stream << "ID: " << each->getCourseCode() <<

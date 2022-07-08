@@ -41,7 +41,7 @@ public:
 
     void setUsersList(const list<User *> &usersList);
 
-    // Δημιουργεί καταστάσεις με τους φοιτητές που παρακολουθούν ένα μάθημα
+    // Δημιουργεί καταστάσεις με τους φοιτητές που παρακολουθούν ένα τουλάχιστον μάθημα
     list<Student *> listOfRegisteredStudentsOnCourse(Course &);
 
     // Δέχεται το όνομα και το συνθηματικό ενός χρήστη του συστήματος και
@@ -56,8 +56,9 @@ public:
     // (iv) Να υλοποιηθεί μέθοδος printFacultyData() στην κλάση EClass η οποία θα τυπώνει τα στοιχεία των μελών του τμήματος.
     void printFacultyData();
 
-
-
+    void addPerson(Person &);
+    void addUser(User &);
+    EClass operator++(int);
 };
 
 

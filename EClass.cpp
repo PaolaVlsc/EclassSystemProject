@@ -92,19 +92,56 @@ void EClass::printFacultyData() {
         // print professor
         professor = dynamic_cast<Professor *>(each);
         if (professor != nullptr) {
-            // FIXME 01 print()
-            // professor.print();
+            professor->print(std::cout);
         }
 
         // print student
         student = dynamic_cast<Student *>(each);
         if (student != nullptr) {
-            // FIXME 01 print()
-            // professor.print();
+            student->print(std::cout);
         }
 
     }
 
 }
 
+void EClass::addPerson(Person &person) {
+    list<Person *> temp = this->studentsAndProfessorsList;
+    temp.push_back(&person);
+    this->studentsAndProfessorsList = temp;
+}
+
+
+void EClass::addUser(User &user) {
+    list<User *> temp = this->usersList;
+    temp.push_back(&user);
+    this->usersList = temp;
+}
+
+// (ix) Υπερφορτώστε τον τελεστή μετα αύξησης ++ ώστε κατά την εφαρμογή του να αυξάνεται κατά ένα το εξάμηνο όλων των φοιτητών του τμήματος.
+// operator ++ (r--)
+EClass EClass::operator++(int) {
+    EClass temp;
+    temp = *this;
+
+    // list of students in Eclass ( active )
+    list<Student *> listActiveStudents;
+    Student *student;
+
+    for (Person *const &each: temp.getStudentsAndProfessorsList()) {
+        student = dynamic_cast<Student *>(each);
+        if (student != nullptr) {
+            // check if it has courses
+            if (student->getCoursesList().size() != 0) {
+                listActiveStudents.push_back(student);
+            }
+        }
+    }
+
+    for (Student *&each: listActiveStudents) {
+        each->setSemester(each->getSemester() + 1);
+    }
+
+    return temp;
+}
 
