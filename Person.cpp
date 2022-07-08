@@ -9,8 +9,7 @@
 using namespace std;
 
 // constructor
-Person::Person(const string &code, const char *lastName, const char *firstName, const string &email,
-               const list<Course *> &coursesList) {
+Person::Person(const string &code, const char *lastName, const char *firstName, const string &email) {
     this->code = code;
 
     // last name and first name
@@ -27,6 +26,11 @@ Person::Person(const string &code, const char *lastName, const char *firstName, 
     strncpy(this->firstName, firstName, strlen(firstName) + 1);
 
     this->email = email;
+}
+
+Person::Person(const string &code, const char *lastName, const char *firstName, const string &email,
+               const list<Course *> &coursesList) : Person(code, lastName, firstName, email) {
+
     this->coursesList = coursesList;
 }
 
@@ -66,7 +70,7 @@ void Person::setCode(const string &code) {
 }
 
 void Person::setLastName(const char *lastName) {
-    delete [] this->lastName;
+    delete[] this->lastName;
     // last name and first name
     try {
         this->lastName = new char[strlen(lastName) + 1];
@@ -79,7 +83,7 @@ void Person::setLastName(const char *lastName) {
 }
 
 void Person::setFirstName(const char *firstName) {
-    delete [] this->firstName;
+    delete[] this->firstName;
 
     // first name
     try {
@@ -120,6 +124,7 @@ const string &Person::getEmail() const {
 const list<Course *> &Person::getCoursesList() const {
     return coursesList;
 }
+
 #include <algorithm>
 
 bool Person::hasCourse(Course &course) {
@@ -132,11 +137,18 @@ bool Person::hasCourse(Course &course) {
     return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
 }
 
-//template<typename T>
-//T &Person::operator=(const T &) {
-//    //return <#initializer#>;
-//    return
-//}
+void Person::addCourse(Course &course) {
+    list<Course *> temp = this->getCoursesList();
+    temp.push_back(&course);
+    this->setCoursesList(temp);
+}
 
 
-
+ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {
+    for (Course *each: coursesList) {
+        stream << "ID: " << each->getCourseCode() <<
+               "\tName: " << each->getCourseName() <<
+               "\tSemester: " << each->getCourseSemester() << endl;
+    }
+    return stream;
+}

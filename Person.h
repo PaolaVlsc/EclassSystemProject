@@ -11,6 +11,7 @@
 
 using std::list;
 using std::string;
+using std::ostream;
 
 class Person {
 private:
@@ -22,6 +23,7 @@ private:
     list<Course *> coursesList;
 public:
     // constructor
+    Person(const string &, const char *, const char *, const string &);
     Person(const string &, const char *, const char *, const string &, const list<Course *> &);
 
     // copy constructor
@@ -52,15 +54,13 @@ public:
 
     const list<Course *> &getCoursesList() const;
 
-    // FIXME 01: pure virtual
-    //virtual void print(ostream &) const = 0;
-
-    // Να υπερφορτωθεί ο τελεστής = (assignment operator)ώστε να πραγματοποιείται σωστά η λειτουργία ανάθεσης.
-    //template <typename T> T& operator=(const T &) ;
+    virtual void print(ostream &) const = 0;
+    void addCourse(Course &);
 
     // Έλεγχος αν έχει αυτό το μάθημα
     bool hasCourse(Course &);
 };
 
+ostream &operator<<(ostream &, const list<Course *> &);
 
 #endif //ECLASSSYSTEMPROJECT_PERSON_H

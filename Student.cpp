@@ -12,7 +12,16 @@
  */
 #include "Student.h"
 
+using std::endl;
+
+
 // constructor
+Student::Student(const string &code, const char *lastName, const char *firstName, unsigned int semester,
+                 const string &email) :
+        Person(code, lastName, firstName, email) {
+    this->semester = semester;
+}
+
 Student::Student(const string &code, const char *lastName, const char *firstName, unsigned int semester,
                  const string &email, const list<Course *> &coursesList) :
         Person(code, lastName, firstName, email, coursesList) {
@@ -38,4 +47,27 @@ void Student::setSemester(unsigned int semester) {
     this->semester = semester;
 }
 
-// FIXME 01: virtual print()
+void Student::print(ostream &stream) const {
+    stream << endl << "ID: " << getCode() <<
+           "\tLast Name: " << getLastName() <<
+           "\tFirst Name: " << getLastName() <<
+           "\tSemester: " << getSemester() <<
+           "\tEmail: " << getEmail() << endl <<
+           "Courses: " << endl << getCoursesList() << endl;
+}
+
+Student &Student::operator=(const Student &copy) {
+    if (this == &copy)
+        return *this;
+
+    this->setCode(copy.getCode());
+    this->setLastName(copy.getLastName());
+    this->setFirstName(copy.getFirstName());
+    this->setSemester(copy.getSemester());
+    this->setEmail(copy.getEmail());
+    this->setCoursesList(copy.getCoursesList());
+
+    return *this;
+}
+
+
