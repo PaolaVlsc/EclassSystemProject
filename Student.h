@@ -15,6 +15,8 @@ private:
     unsigned int semester;
 public:
     // constructor
+    Student(const string &, const char *, const char *, unsigned int, const string &);
+
     Student(const string &, const char *, const char *, unsigned int, const string &,
             const list<Course *> &);
 
@@ -29,12 +31,12 @@ public:
 
     void setSemester(unsigned int semester);
 
-    void print (ostream &) const;
+    void print(ostream &) const;
 
     // operator =
     // t1 = t2 = t3
     // δεξιά προς τα αριστερά
-    Student&  operator=(const Student &);
+    Student &operator=(const Student &);
 
 };
 

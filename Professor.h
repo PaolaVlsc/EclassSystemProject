@@ -14,6 +14,8 @@ class Professor : public Person {
     string speciality;
 public:
     // constructor
+    Professor(const string &, const char *, const char *, const string &, const string &);
+
     Professor(const string &, const char *, const char *, const string &, const string &, const list<Course *> &);
 
     // copy constructor

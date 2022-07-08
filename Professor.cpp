@@ -6,6 +6,12 @@
 
 using std::endl;
 
+
+Professor::Professor(const string &code, const char *lastName, const char *firstName, const string &speciality,
+                     const string &email) : Person(code, lastName, firstName, email) {
+    this->speciality = speciality;
+}
+
 Professor::Professor(const string &code, const char *lastName, const char *firstName, const string &speciality,
                      const string &email,
                      const list<Course *> &coursesList) : Person(code, lastName, firstName, email, coursesList) {

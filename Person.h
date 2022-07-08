@@ -23,6 +23,7 @@ private:
     list<Course *> coursesList;
 public:
     // constructor
+    Person(const string &, const char *, const char *, const string &);
     Person(const string &, const char *, const char *, const string &, const list<Course *> &);
 
     // copy constructor

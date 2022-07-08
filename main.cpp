@@ -58,25 +58,43 @@ int main() {
 
 
 
-    Student student02("cs161020", "ad", "a", 12, "cs161d0@uniwa.gr", coursesList);
-    cout << student02.getFirstName();
-    student02.print(cout);
-    student02 = student01;
-    student02.print(cout);
+//    Student student02("cs161020", "ad", "a", 12, "cs161d0@uniwa.gr", coursesList);
+//    cout << student02.getFirstName();
+//    student02.print(cout);
+//    student02 = student01;
+//    student02.print(cout);
+//
+//    Course *C1 = new Course ("N1-2020", "Αντικειμενοστραφής Προγραμματισμός", 2);
+//    student01.addCourse(*C1);
+//    student01.print(cout);
+//
+//    Professor professor02("cs161020", "3", "43", "ddd", "cs1fs61020@uniwa.gr", coursesList);
+//    cout << professor02.getSpeciality();
+//    professor02.print(cout);
+//
+//    professor02 = professor01;
+//    professor02.print(cout);
+//
+//    professor01.addCourse(*C1);
+//    professor01.print(cout);
+
+
+
+    ////////////////////////
 
     Course *C1 = new Course ("N1-2020", "Αντικειμενοστραφής Προγραμματισμός", 2);
-    student01.addCourse(*C1);
-    student01.print(cout);
+    Course *C2 = new Course ("N1-3030", "Δίκτυα", 3);
+    Course *C3 = new Course ("N1-4040", "Γραφικά", 4);
 
-    Professor professor02("cs161020", "3", "43", "ddd", "cs1fs61020@uniwa.gr", coursesList);
-    cout << professor02.getSpeciality();
-    professor02.print(cout);
+    Student *S1 = new Student ("100", "Ιωάννου", "Ιωάννης", 1, "cs100@teiath.gr");
+    Student *S2 = new Student ("200", "Αντωνίου", "Αντώνιος", 3, "cs200@teiath.gr");
+    Professor *P1 = new Professor ("80", "Γεωργίου", "Γεωργία", "geor@teiath.gr", "Τεχνητή Νοημοσύνη");
 
-    professor02 = professor01;
-    professor02.print(cout);
+    User *U1 = new User ("Log1", "Pass1", S1);
+    User *U2 = new User ("Log2", "Pass2", S2);
+    User *U3 = new User ("Log3", "Pass3", P1);
 
-    professor01.addCourse(*C1);
-    professor01.print(cout);
+    
     return 0;
 }
 

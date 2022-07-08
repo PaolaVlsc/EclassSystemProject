@@ -9,8 +9,7 @@
 using namespace std;
 
 // constructor
-Person::Person(const string &code, const char *lastName, const char *firstName, const string &email,
-               const list<Course *> &coursesList) {
+Person::Person(const string &code, const char *lastName, const char *firstName, const string &email) {
     this->code = code;
 
     // last name and first name
@@ -27,6 +26,11 @@ Person::Person(const string &code, const char *lastName, const char *firstName, 
     strncpy(this->firstName, firstName, strlen(firstName) + 1);
 
     this->email = email;
+}
+
+Person::Person(const string &code, const char *lastName, const char *firstName, const string &email,
+               const list<Course *> &coursesList) : Person(code, lastName, firstName, email) {
+
     this->coursesList = coursesList;
 }
 

@@ -17,6 +17,12 @@ using std::endl;
 
 // constructor
 Student::Student(const string &code, const char *lastName, const char *firstName, unsigned int semester,
+                 const string &email) :
+        Person(code, lastName, firstName, email) {
+    this->semester = semester;
+}
+
+Student::Student(const string &code, const char *lastName, const char *firstName, unsigned int semester,
                  const string &email, const list<Course *> &coursesList) :
         Person(code, lastName, firstName, email, coursesList) {
     this->semester = semester;
@@ -63,4 +69,5 @@ Student &Student::operator=(const Student &copy) {
 
     return *this;
 }
+
 
