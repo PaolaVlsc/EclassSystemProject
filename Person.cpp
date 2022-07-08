@@ -132,13 +132,6 @@ bool Person::hasCourse(Course &course) {
     return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
 }
 
-//template<typename T>
-//T &Person::operator=(const T &) {
-//    //return <#initializer#>;
-//    return
-//}
-
-
 ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {
     for (Course *each: coursesList) {
         stream << "ID: " << each->getCourseCode() <<

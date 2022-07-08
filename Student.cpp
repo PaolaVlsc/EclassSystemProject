@@ -41,7 +41,7 @@ void Student::setSemester(unsigned int semester) {
     this->semester = semester;
 }
 
- void Student::print(ostream &stream) const {
+void Student::print(ostream &stream) const {
     stream << endl << "ID: " << getCode() <<
            "\tLast Name: " << getLastName() <<
            "\tFirst Name: " << getLastName() <<
@@ -50,3 +50,16 @@ void Student::setSemester(unsigned int semester) {
            "Courses: " << endl << getCoursesList() << endl;
 }
 
+Student &Student::operator=(const Student &copy) {
+    if (this == &copy)
+        return *this;
+
+    this->setCode(copy.getCode());
+    this->setLastName(copy.getLastName());
+    this->setFirstName(copy.getFirstName());
+    this->setSemester(copy.getSemester());
+    this->setEmail(copy.getEmail());
+    this->setCoursesList(copy.getCoursesList());
+
+    return *this;
+}

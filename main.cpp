@@ -55,6 +55,15 @@ int main() {
         }
     }
 
+
+
+    Student student02("cs161020", "ad", "a", 12, "cs161d0@uniwa.gr", coursesList);
+    cout << student02.getFirstName();
+    student02.print(cout);
+    student02 = student01;
+    student02.print(cout);
+
+
     return 0;
 }
 
