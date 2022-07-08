@@ -63,3 +63,9 @@ Student &Student::operator=(const Student &copy) {
 
     return *this;
 }
+
+void Student::addCourse(Course &course) {
+    list<Course *> temp = this->getCoursesList();
+    temp.push_back(&course);
+    this->setCoursesList(temp);
+}

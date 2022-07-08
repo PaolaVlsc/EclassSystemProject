@@ -30,6 +30,7 @@ public:
     void setSemester(unsigned int semester);
 
     void print (ostream &) const;
+    void addCourse(Course &);
 
     // operator =
     // t1 = t2 = t3

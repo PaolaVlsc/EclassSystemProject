@@ -38,9 +38,9 @@ int main() {
     cout << student01.getFirstName();
     student01.print(cout);
 
-    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
-    cout << professor01.getSpeciality();
-    professor01.print(cout);
+//    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
+//    cout << professor01.getSpeciality();
+//    professor01.print(cout);
 
 
     User user01("Log01", "1234", &student01);
@@ -64,13 +64,16 @@ int main() {
     student02 = student01;
     student02.print(cout);
 
+    Course *C1 = new Course ("N1-2020", "Αντικειμενοστραφής Προγραμματισμός", 2);
+    student01.addCourse(*C1);
+    student01.print(cout);
 
-    Professor professor02("cs161020", "3", "43", "ddd", "cs1fs61020@uniwa.gr", coursesList);
-    cout << professor02.getSpeciality();
-    professor02.print(cout);
-
-    professor02 = professor01;
-    professor02.print(cout);
+//    Professor professor02("cs161020", "3", "43", "ddd", "cs1fs61020@uniwa.gr", coursesList);
+//    cout << professor02.getSpeciality();
+//    professor02.print(cout);
+//
+//    professor02 = professor01;
+//    professor02.print(cout);
 
     return 0;
 }

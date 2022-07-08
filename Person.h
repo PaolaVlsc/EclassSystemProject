@@ -53,6 +53,9 @@ public:
 
     const list<Course *> &getCoursesList() const;
 
+    virtual void print(ostream &) const = 0;
+    virtual void addCourse(Course &) = 0;
+
     // Έλεγχος αν έχει αυτό το μάθημα
     bool hasCourse(Course &);
 };
