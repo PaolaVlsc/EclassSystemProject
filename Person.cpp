@@ -139,4 +139,11 @@ bool Person::hasCourse(Course &course) {
 //}
 
 
-
+ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {
+    for (Course *each: coursesList) {
+        stream << "ID: " << each->getCourseCode() <<
+               "\tName: " << each->getCourseName() <<
+               "\tSemester: " << each->getCourseSemester() << endl;
+    }
+    return stream;
+}

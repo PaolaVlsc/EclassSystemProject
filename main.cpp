@@ -36,9 +36,11 @@ int main() {
 
     Student student01("cs161020", "Velasco", "Paola", 12, "cs161020@uniwa.gr", coursesList);
     cout << student01.getFirstName();
+    student01.print(cout);
 
 //    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
 //    cout << professor01.getSpeciality();
+//    professor01.print(cout);
 
     User user01("Log01", "1234", &student01);
     cout << user01.getPerson()->getCode();
@@ -48,7 +50,7 @@ int main() {
         readFromFileUsers(fileName);
     } catch (int code) {
         if (code == -1) {
-            cout << "Σφάλμα κατά το άνοιγμα αρχείου για διάβασμα users \n";
+            cout << endl << "Σφάλμα κατά το άνοιγμα αρχείου για διάβασμα users \n";
             exit(EXIT_FAILURE);
         }
     }

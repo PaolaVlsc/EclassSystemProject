@@ -12,6 +12,9 @@
  */
 #include "Student.h"
 
+using std::endl;
+
+
 // constructor
 Student::Student(const string &code, const char *lastName, const char *firstName, unsigned int semester,
                  const string &email, const list<Course *> &coursesList) :
@@ -38,4 +41,12 @@ void Student::setSemester(unsigned int semester) {
     this->semester = semester;
 }
 
-// FIXME 01: virtual print()
+ void Student::print(ostream &stream) const {
+    stream << endl << "ID: " << getCode() <<
+           "\tLast Name: " << getLastName() <<
+           "\tFirst Name: " << getLastName() <<
+           "\tSemester: " << getSemester() <<
+           "\tEmail: " << getEmail() << endl <<
+           "Courses: " << endl << getCoursesList() << endl;
+}
+

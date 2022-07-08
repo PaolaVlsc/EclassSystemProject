@@ -7,6 +7,8 @@
 
 
 #include "Person.h"
+#include <iostream>
+#include <cstring>
 
 class Professor : public Person {
     string speciality;
@@ -22,9 +24,11 @@ public:
 
     // setters and getters
     const string &getSpeciality() const;
+
     void setSpeciality(const string &speciality);
 
-    // FIXME 01: virtual print()
+    void print(ostream &) const;
+
 };
 
 

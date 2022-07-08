@@ -4,6 +4,8 @@
 
 #include "Professor.h"
 
+using std::endl;
+
 Professor::Professor(const string &code, const char *lastName, const char *firstName, const string &speciality,
                      const string &email,
                      const list<Course *> &coursesList) : Person(code, lastName, firstName, email, coursesList) {
@@ -26,4 +28,12 @@ void Professor::setSpeciality(const string &speciality) {
     this->speciality = speciality;
 }
 
-// FIXME 01: virtual print()
+void Professor::print(ostream &stream) const {
+    stream << endl << "ID: " << getCode() <<
+           "\tLast Name: " << getLastName() <<
+           "\tFirst Name: " << getLastName() <<
+           "\tSpeciality: " << getSpeciality() <<
+           "\tEmail: " << getEmail() << endl <<
+           "Courses: " << endl << getCoursesList() << endl;
+}
+
