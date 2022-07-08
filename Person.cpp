@@ -66,7 +66,7 @@ void Person::setCode(const string &code) {
 }
 
 void Person::setLastName(const char *lastName) {
-    delete [] this->lastName;
+    delete[] this->lastName;
     // last name and first name
     try {
         this->lastName = new char[strlen(lastName) + 1];
@@ -79,7 +79,7 @@ void Person::setLastName(const char *lastName) {
 }
 
 void Person::setFirstName(const char *firstName) {
-    delete [] this->firstName;
+    delete[] this->firstName;
 
     // first name
     try {
@@ -120,6 +120,7 @@ const string &Person::getEmail() const {
 const list<Course *> &Person::getCoursesList() const {
     return coursesList;
 }
+
 #include <algorithm>
 
 bool Person::hasCourse(Course &course) {
@@ -130,6 +131,12 @@ bool Person::hasCourse(Course &course) {
 //    return false;
 
     return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
+}
+
+void Person::addCourse(Course &course) {
+    list<Course *> temp = this->getCoursesList();
+    temp.push_back(&course);
+    this->setCoursesList(temp);
 }
 
 ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {

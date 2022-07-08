@@ -28,8 +28,10 @@ public:
     void setSpeciality(const string &speciality);
 
     void print(ostream &) const;
+    // operator =
+    // t1 = t2 = t3
+    // δεξιά προς τα αριστερά
     Professor&  operator=(const Professor &);
-
 };
 
 
