@@ -10,7 +10,7 @@
  * setters and getters
  * virtual print()
  */
-#include "Student.h"
+#include "../classHeaders/Student.h"
 
 using std::endl;
 

@@ -2,7 +2,7 @@
 // Created by Velasco on 7/7/2022.
 //
 
-#include "Professor.h"
+#include "../classHeaders/Professor.h"
 
 using std::endl;
 

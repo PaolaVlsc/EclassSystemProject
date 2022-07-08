@@ -2,7 +2,7 @@
 // Created by Velasco on 7/7/2022.
 //
 
-#include "Person.h"
+#include "../classHeaders/Person.h"
 #include <iostream>
 #include <cstring>
 
@@ -128,13 +128,13 @@ const list<Course *> &Person::getCoursesList() const {
 #include <algorithm>
 
 bool Person::hasCourse(Course &course) {
-//    list <Course *>::iterator it;
-//    for (it = coursesList.begin (); it != coursesList.end (); it++)
-//        if (*it == &course)
-//            return true;
-//    return false;
+    list <Course *>::iterator it;
+    for (it = coursesList.begin (); it != coursesList.end (); it++)
+        if (*it == &course)
+            return true;
+    return false;
 
-    return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
+   // return find(coursesList.begin(), coursesList.end(), &course) != coursesList.end();
 }
 
 void Person::addCourse(Course &course) {
@@ -145,7 +145,7 @@ void Person::addCourse(Course &course) {
 
 
 ostream &operator<<(ostream &stream, const list<Course *> &coursesList) {
-    for (Course *each: coursesList) {
+    for (Course * each: coursesList) {
         stream << "ID: " << each->getCourseCode() <<
                "\tName: " << each->getCourseName() <<
                "\tSemester: " << each->getCourseSemester() << endl;

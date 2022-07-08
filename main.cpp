@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Course.h"
-#include "Person.h"
-#include "Student.h"
-#include "Professor.h"
-#include "User.h"
-#include "EClass.h"
+#include "classHeaders/Course.h"
+#include "classHeaders/Person.h"
+#include "classHeaders/Student.h"
+#include "classHeaders/Professor.h"
+#include "classHeaders/User.h"
+#include "classHeaders/EClass.h"
 #include<list>
 #include <fstream>
 

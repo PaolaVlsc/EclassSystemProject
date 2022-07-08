@@ -3,7 +3,7 @@
 //
 
 
-#include "Course.h"
+#include "../classHeaders/Course.h"
 #include <iostream>
 
 //constructor

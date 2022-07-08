@@ -2,7 +2,7 @@
 // Created by Velasco on 7/7/2022.
 //
 
-#include "User.h"
+#include "../classHeaders/User.h"
 
 User::User(const string &username, const string &password, Person *person) : username(username), password(password),
                                                                              person(person) {}
