@@ -28,6 +28,7 @@ public:
     void setSpeciality(const string &speciality);
 
     void print(ostream &) const;
+    Professor&  operator=(const Professor &);
 
 };
 

@@ -38,9 +38,10 @@ int main() {
     cout << student01.getFirstName();
     student01.print(cout);
 
-//    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
-//    cout << professor01.getSpeciality();
-//    professor01.print(cout);
+    Professor professor01("cs161020", "Velasco", "Paola", "nai", "cs161020@uniwa.gr", coursesList);
+    cout << professor01.getSpeciality();
+    professor01.print(cout);
+
 
     User user01("Log01", "1234", &student01);
     cout << user01.getPerson()->getCode();
@@ -63,6 +64,13 @@ int main() {
     student02 = student01;
     student02.print(cout);
 
+
+    Professor professor02("cs161020", "3", "43", "ddd", "cs1fs61020@uniwa.gr", coursesList);
+    cout << professor02.getSpeciality();
+    professor02.print(cout);
+
+    professor02 = professor01;
+    professor02.print(cout);
 
     return 0;
 }

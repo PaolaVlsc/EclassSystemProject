@@ -37,3 +37,16 @@ void Professor::print(ostream &stream) const {
            "Courses: " << endl << getCoursesList() << endl;
 }
 
+Professor &Professor::operator=(const Professor &copy) {
+    if (this == &copy)
+        return *this;
+
+    this->setCode(copy.getCode());
+    this->setLastName(copy.getLastName());
+    this->setFirstName(copy.getFirstName());
+    this->setSpeciality(copy.getSpeciality());
+    this->setEmail(copy.getEmail());
+    this->setCoursesList(copy.getCoursesList());
+
+    return *this;
+}
