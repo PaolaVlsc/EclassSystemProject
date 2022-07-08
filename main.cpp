@@ -7,6 +7,7 @@
 #include "EClass.h"
 #include<list>
 #include <fstream>
+
 using namespace std;
 
 // φοιτητές που παρακολουθούν ένα τουλάχιστον μάθημα
@@ -43,15 +44,20 @@ int main() {
     cout << user01.getPerson()->getCode();
 
     string fileName = "users.txt";
-    readFromFileUsers(fileName);
+    try {
+        readFromFileUsers(fileName);
+    } catch (int code) {
+        if (code == -1) {
+            cout << "Σφάλμα κατά το άνοιγμα αρχείου για διάβασμα users \n";
+            exit(EXIT_FAILURE);
+        }
+    }
 
     return 0;
 }
 
 
-
-void readFromFileUsers(const string &fileName)
-{
+void readFromFileUsers(const string &fileName) {
     // Δημιουργία stream
     ifstream fileInput;
 
@@ -60,7 +66,6 @@ void readFromFileUsers(const string &fileName)
 
     // Έλεγχος ενέργειας
     if (fileInput.is_open() == false) {
-        cout << "Σφάλμα κατά το άνοιγμα αρχείου για διάβασμα μαθήματα σχολής \n";
         throw -1;
     }
 
@@ -78,7 +83,7 @@ void readFromFileUsers(const string &fileName)
         if (!fileInput)
             break; // An exei ftasei sto telos tou arxeiou OR egine kapoio sfalma
 
-        sscanf(line.c_str(), "%d,%[^,],%s\n", &code, username ,password);
+        sscanf(line.c_str(), "%d,%[^,],%s\n", &code, username, password);
         cout << code << " " << username << " " << password << endl;
 
     }
